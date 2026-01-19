@@ -1,0 +1,123 @@
+---
+interface Props {
+	title: string;
+    description?: string;
+}
+
+const { title, description = "Join Crown88, Singapore’s top casino for live games, big bonuses, and instant withdrawals." } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+    <meta name="title" content={title}>
+    <meta name="description" content={description}>
+    <meta name="keywords" content="crypto casino, online casino, sports betting, live casino, blockchain gaming, cryptocurrency gambling, Asian casino, Crown88, secure betting, provably fair">
+    <meta name="author" content="Crown88">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="en">
+    <meta name="revisit-after" content="7 days">
+    <meta name="canonical" content="https://www.crown88.games/">
+    <link rel="icon" href="assets/images/logo_only.png">
+    <link rel="stylesheet" href="assets/external/cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/dist/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/dist/bootstrap/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/dist/bootstrap/css/owl.theme.default.min.css">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <script src="assets/external/cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.6/lottie.min.js" is:inline></script>
+    <style is:global>
+      body::-webkit-scrollbar {
+        display: none;
+      }
+      html::-webkit-scrollbar {
+        display: none;
+      }
+      
+      .hero-section {
+        background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+        padding: 80px 0;
+        color: white;
+        text-align: center;
+        border-bottom: 1px solid #333;
+      }
+
+      .promo-badge {
+        background: linear-gradient(180deg, #eac071 0.41%, #ffeaa4 39.66%, #e7cd79 75.14%, #dbbf6b 100.41%), #fff;
+        color: #0c0b06;
+        padding: 12px 30px;
+        border-radius: 50px;
+        font-weight: 900;
+        display: inline-block;
+        margin-bottom: 25px;
+        font-size: 1.3rem;
+        box-shadow: 0 0 25px rgba(234, 192, 113, 0.4);
+        animation: pulse 2s infinite;
+        text-transform: uppercase;
+        border: 2px solid #dbbf6b;
+      }
+
+      @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+      }
+
+      .hero-title {
+        font-size: 3.5rem;
+        font-weight: 800;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        background: linear-gradient(to bottom, #fff, #888);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .register-btn {
+        background: linear-gradient(180deg, #eac071 0.41%, #ffeaa4 39.66%, #e7cd79 75.14%, #dbbf6b 100.41%), #fff;
+        color: #0c0b06;
+        padding: 15px 60px;
+        border-radius: 15px;
+        border: 3px solid #dbbf6b;
+        font-weight: 900;
+        font-size: 1.5rem;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 30px;
+        transition: transform 0.2s, box-shadow 0.2s;
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+        text-transform: uppercase;
+      }
+      .register-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(234, 192, 113, 0.4);
+        color: #0c0b06;
+      }
+    </style>
+</head>
+<body>
+    <slot />
+    
+    <script is:inline>
+        document.querySelectorAll(".menu-item").forEach(item => {
+            item.addEventListener("click", () => {
+                document.querySelectorAll(".menu-item").forEach(i => i.classList.remove("active"));
+                document.querySelectorAll(".video-box").forEach(v => v.classList.remove("active"));
+                item.classList.add("active");
+                const videoId = item.getAttribute("data-video");
+                if (videoId) {
+                    const el = document.getElementById(videoId);
+                    if (el) el.classList.add("active");
+                }
+            });
+        });
+    </script>
+    <script src="assets/dist/bootstrap/js/script.js" is:inline></script>
+    <script src="assets/dist/bootstrap/js/jquery.min.js" is:inline></script>
+    <script src="assets/dist/bootstrap/js/bootstrap.bundle.min.js" is:inline></script>
+    <script src="assets/dist/bootstrap/js/owl.carousel.min.js" is:inline></script>
+</body>
+</html>

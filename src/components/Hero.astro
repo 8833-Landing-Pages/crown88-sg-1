@@ -1,0 +1,33 @@
+---
+interface Props {
+    promoText: string;
+    regionName: string;
+    registerLink?: string;
+}
+
+const { promoText, regionName, registerLink = "https://c88.io" } = Astro.props;
+---
+
+<section class="hero-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-start mb-4">
+                <img src="assets/images/logo.png" alt="Crown88 Logo" style="max-width: 200px;">
+            </div>
+            <div class="col-12 text-center">
+                <div class="promo-badge">
+                    LIMITED TIME OFFER: {promoText}
+                </div>
+                <h1 class="hero-title">
+                    Welcome to Crown88 {regionName}
+                </h1>
+                <p class="lead mb-4" style="color: #ccc; font-size: 1.4rem;">
+                    The most trusted crypto casino platform in Asia. Join thousands of players today.
+                </p>
+                <div class="hero-cta">
+                    <a href={registerLink} class="register-btn">REGISTER & CLAIM NOW</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

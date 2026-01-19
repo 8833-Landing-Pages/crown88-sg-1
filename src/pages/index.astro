@@ -1,0 +1,14 @@
+---
+import LandingLayout from '../layouts/LandingLayout.astro';
+import Hero from '../components/Hero.astro';
+import MainContent from '../components/MainContent.astro';
+
+const title = "Crown88 Singapore – Best Online Casino & Sports Betting";
+const promoText = "Register and get 30 SGD Free Credits (1x Turnover)";
+const regionName = "Singapore";
+---
+
+<LandingLayout title={title}>
+    <Hero promoText={promoText} regionName={regionName} />
+    <MainContent />
+</LandingLayout>
