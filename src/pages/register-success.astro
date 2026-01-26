@@ -1,0 +1,22 @@
+---
+import LandingLayout from '../layouts/LandingLayout.astro';
+
+const title = "Redirecting to registration";
+const redirectUrl = 'https://c88.world/register?couponCode=FBF';
+---
+
+<LandingLayout title={title}>
+  <main style="min-height:60vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px;">
+    <div>
+      <h1 style="font-size:2rem;margin-bottom:12px;">One moment...</h1>
+      <p style="font-size:1.1rem;">We are taking you to the registration page.</p>
+      <p style="margin-top:16px;font-size:0.95rem;">If you are not redirected automatically, <a href={redirectUrl}>click here</a>.</p>
+    </div>
+  </main>
+  <script is:inline>
+    const redirectUrl = 'https://c88.world/register?couponCode=FBF';
+    setTimeout(() => {
+      window.location.href = redirectUrl;
+    }, 2000);
+  </script>
+</LandingLayout>
