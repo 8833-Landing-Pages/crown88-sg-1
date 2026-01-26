@@ -1,6 +1,26 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
 
 /* :root { --orange: #D33F27; --DarkGrey: #333333; --offwhite: #F4F4F4; --linearback: linear-gradient(180deg, #D33F27 0%, #F9DB00 100%);} */
+:root {
+  --bg: #0a0a08;
+  --bg-soft: #14110b;
+  --bg-panel: #15130f;
+  --gold-1: #f3d998;
+  --gold-2: #e7c77a;
+  --gold-3: #caa45a;
+  --champagne: #f8efd6;
+  --ember: #d8842c;
+  --ink: #0c0b06;
+  --text: #f4f1e6;
+  --muted: #c9c2b5;
+  --line: rgba(248, 239, 214, 0.18);
+  --accent: #4de1c2;
+  --shadow-glow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  --font-display: "Cinzel", serif;
+  --font-body: "Space Grotesk", sans-serif;
+  --gold-gradient: linear-gradient(135deg, #f3d998 0%, #ffe7a6 35%, #d7b069 70%, #b98b42 100%);
+  --glass: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+}
 
 a {
   text-decoration: none;
@@ -33,10 +53,13 @@ p {
   margin: 0;
 }
 body {
-  background-color: #0c0b06;
-  color: white;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(120, 86, 36, 0.35), transparent 45%),
+    radial-gradient(circle at 82% 8%, rgba(94, 58, 24, 0.3), transparent 40%),
+    linear-gradient(180deg, #0a0a08 0%, #11100c 48%, #0a0a08 100%);
+  color: var(--text);
   overflow-x: hidden;
-  font-family: "Lato", sans-serif;
+  font-family: var(--font-body);
 }
 button {
   border: none;
@@ -62,6 +85,8 @@ button {
   overflow: hidden;
   left: 50%;
   transform: translateX(-50%);
+  filter: saturate(1.15) contrast(1.08) drop-shadow(0 40px 80px rgba(0, 0, 0, 0.45));
+  opacity: 0.95;
 }
 
 /* location country name */
@@ -74,26 +99,26 @@ button {
 /* Country name label */
 .country-pin button {
   border-radius: 31.404px;
-  border: 2px solid #eac071;
-  background: #0c0b06;
+  border: 1px solid var(--gold-2);
+  background: rgba(10, 10, 8, 0.78);
   backdrop-filter: blur(2.093600034713745px);
-  color: #fff;
+  color: var(--text);
   padding: 9px 30px;
   white-space: nowrap;
-  color: #818181;
+  color: var(--muted);
   text-align: center;
-  font-family: "Lato", sans-serif;
+  font-family: var(--font-body);
   font-size: 13px;
   font-style: normal;
   font-weight: 700;
   text-transform: uppercase;
 }
 .earth-map h6 {
-  font-family: "Lato", sans-serif;
+  font-family: var(--font-display);
   font-size: 16px;
   font-weight: bold;
   text-transform: uppercase;
-  background: linear-gradient(to right, #eac071, #ffeaa4, #e7cd79, #dbbf6b);
+  background: var(--gold-gradient);
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
@@ -109,10 +134,10 @@ button {
   transform: translate(-50%, -50%);
 }
 .earth-map a {
-  color: #fff;
+  color: var(--muted);
   position: absolute;
   bottom: 0;
-  font-family: "Lato", sans-serif;
+  font-family: var(--font-body);
   font-size: 12px;
   font-style: normal;
   font-weight: 300;
@@ -120,12 +145,12 @@ button {
 
 .banner-section h1,
 .power-container h1 {
-  font-family: "Lato", sans-serif;
+  font-family: var(--font-display);
   font-size: 78px;
   font-style: normal;
   font-weight: 900;
   text-transform: uppercase;
-  background: linear-gradient(to right, #eac071, #ffeaa4, #e7cd79, #dbbf6b);
+  background: var(--gold-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -134,7 +159,7 @@ button {
 }
 .banner-section h2,
 .power-container h2 {
-  font-family: "Lato", sans-serif;
+  font-family: var(--font-display);
   font-size: 78px;
   font-style: normal;
   font-weight: 900;
@@ -157,15 +182,15 @@ button {
 .video-menu {
   display: flex;
   flex-direction: column;
-  border-left: 1px solid #fff;
+  border-left: 1px solid var(--line);
 }
 .menu-item {
   padding: 5px 40px;
   cursor: pointer;
   position: relative;
   transition: color 0.3s ease;
-  color: #818181;
-  font-family: "Lato", sans-serif;
+  color: var(--muted);
+  font-family: var(--font-display);
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
@@ -173,7 +198,7 @@ button {
   text-transform: uppercase;
 }
 .menu-item.active {
-  color: #fff;
+  color: var(--text);
 }
 .menu-item.active::before {
   content: "";
@@ -183,13 +208,7 @@ button {
   height: 100%;
   width: 3px;
   background:
-    linear-gradient(
-      90deg,
-      #eac071 0%,
-      #ffeaa4 33.17%,
-      #e7cd79 71.63%,
-      #dbbf6b 100%
-    ),
+    var(--gold-gradient),
     #fff;
   border-radius: 2px;
 }
@@ -201,17 +220,19 @@ button {
   display: block;
 }
 .video-box p {
-  color: #fff;
-  font-family: "Lato", sans-serif;
+  color: var(--muted);
+  font-family: var(--font-body);
   font-size: 17px;
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
 }
 .video-content {
-  background: #121009;
+  background: linear-gradient(180deg, rgba(21, 19, 15, 0.92), rgba(12, 11, 6, 0.98));
+  border: 1px solid rgba(243, 217, 152, 0.12);
   padding: 10px;
   border-radius: 15px;
+  box-shadow: var(--shadow-glow);
 }
 .video-box img.video-btn {
   position: absolute;
@@ -231,28 +252,30 @@ button {
   padding-top: 100px;
 }
 .why-player h6 {
-  color: #fff;
-  font-family: "Lato", sans-serif;
+  color: var(--text);
+  font-family: var(--font-display);
   font-size: 40px;
   font-style: normal;
   font-weight: 700;
   line-height: 90px;
 }
 .why-player p {
-  color: #fff;
-  font-family: "Lato", sans-serif;
+  color: var(--muted);
+  font-family: var(--font-body);
   font-size: 17px;
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
 }
 .whyplayer-box {
-  background-color: #121009;
+  background-color: var(--bg-panel);
+  border: 1px solid rgba(248, 239, 214, 0.08);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.2);
   padding: 10px;
 }
 .whyplayer-box label {
-  color: #fff;
-  font-family: "Lato", sans-serif;
+  color: var(--text);
+  font-family: var(--font-body);
   font-size: 12px;
   font-style: normal;
   font-weight: 700;
@@ -262,8 +285,8 @@ button {
 /*================ who-choose ===================*/
 
 .who-choose-container h1 {
-  color: #fff;
-  font-family: "Lato", sans-serif;
+  color: var(--text);
+  font-family: var(--font-display);
   font-size: 40px;
   font-style: normal;
   font-weight: 700;
@@ -271,25 +294,19 @@ button {
 }
 .who-choose-container h6 {
   text-align: center;
-  font-family: "Lato", sans-serif;
+  font-family: var(--font-display);
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
   line-height: 100%;
-  background: linear-gradient(
-    90deg,
-    #eac071 1.73%,
-    #ffeaa4 40.3%,
-    #e7cd79 75.17%,
-    #dbbf6b 100%
-  );
+  background: var(--gold-gradient);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .who-choose-container p {
-  color: #fff;
-  font-family: Lato;
+  color: var(--muted);
+  font-family: var(--font-body);
   font-size: 17px;
   font-style: normal;
   font-weight: 400;
@@ -299,8 +316,8 @@ button {
 /*================ notjust-container ===================*/
 
 .notjust-container h1 {
-  color: #fff;
-  font-family: "Lato", sans-serif;
+  color: var(--text);
+  font-family: var(--font-display);
   font-size: 40px;
   font-style: normal;
   font-weight: 700;
@@ -308,15 +325,15 @@ button {
 }
 .notjust-container label {
   font-style: italic;
-  background: linear-gradient(to right, #eac071, #ffeaa4, #e7cd79, #dbbf6b);
+  background: var(--gold-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
 }
 .notjust-container p {
-  color: #fff;
-  font-family: "Lato", sans-serif;
+  color: var(--muted);
+  font-family: var(--font-body);
   font-size: 17px;
   font-style: normal;
   font-weight: 400;
@@ -333,8 +350,8 @@ button {
 .diverse-container h1,
 .achivment-container h1,
 .footer-container h1 {
-  color: #fff;
-  font-family: "Lato", sans-serif;
+  color: var(--text);
+  font-family: var(--font-display);
   font-size: 40px;
   font-style: normal;
   font-weight: 700;
@@ -343,7 +360,7 @@ button {
 .diverse-container p,
 .achivment-container p,
 .footer-container p {
-  font-family: "Lato", sans-serif;
+  font-family: var(--font-body);
   font-size: 17px;
   font-style: normal;
   font-weight: 400;
@@ -388,31 +405,32 @@ button {
 /*================ footer ===================*/
 
 .footer-container button,
-.anchor-link {
-  color: #0c0b06;
-  font-family: "Lato", sans-serif;
+.anchor-link,
+.register-btn {
+  color: var(--ink);
+  font-family: var(--font-display);
   font-style: normal;
   font-weight: 900;
   line-height: normal;
   text-transform: uppercase;
   border-radius: 15px;
-  border: 3px solid #dbbf6b;
-  background:
-    linear-gradient(
-      180deg,
-      #eac071 0.41%,
-      #ffeaa4 39.66%,
-      #e7cd79 75.14%,
-      #dbbf6b 100.41%
-    ),
-    #fff;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  border: 2px solid var(--gold-3);
+  background: var(--gold-gradient);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
   padding: 15px 60px;
   margin: 30px 0px;
+  display: inline-block;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.footer-container button:hover,
+.anchor-link:hover,
+.register-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.45);
 }
 .footer-container h6 {
-  color: #fff;
-  font-family: "Lato", sans-serif;
+  color: var(--text);
+  font-family: var(--font-display);
   font-size: 17px;
   font-style: normal;
   font-weight: 700;
@@ -420,19 +438,19 @@ button {
 }
 .footer-container p,
 .footer-container ul li {
-  color: #bfbfbf;
-  font-family: "Lato", sans-serif;
+  color: var(--muted);
+  font-family: var(--font-body);
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
 }
 .footer-container .footer-line {
-  border: 2px solid #eac071;
+  border: 2px solid rgba(243, 217, 152, 0.4);
 }
 .footer-container label {
-  color: #fff;
-  font-family: "Lato", sans-serif;
+  color: var(--text);
+  font-family: var(--font-body);
   font-size: 17px;
   font-style: normal;
   font-weight: 400;
@@ -526,7 +544,7 @@ button {
     overflow-x: auto;
     overflow-y: hidden;
     border-left: none;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid var(--line);
     white-space: nowrap;
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -550,15 +568,7 @@ button {
     top: 39px;
     height: 2px;
     width: 196px;
-    background:
-      linear-gradient(
-        90deg,
-        #eac071 0%,
-        #ffeaa4 33.17%,
-        #e7cd79 71.63%,
-        #dbbf6b 100%
-      ),
-      #fff;
+    background: var(--gold-gradient), #fff;
     border-radius: 2px;
   }
 
@@ -802,7 +812,7 @@ button {
     overflow-x: auto;
     overflow-y: hidden;
     border-left: none;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid var(--line);
     white-space: nowrap;
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -826,15 +836,7 @@ button {
     top: 39px;
     height: 2px;
     width: 196px;
-    background:
-      linear-gradient(
-        90deg,
-        #eac071 0%,
-        #ffeaa4 33.17%,
-        #e7cd79 71.63%,
-        #dbbf6b 100%
-      ),
-      #fff;
+    background: var(--gold-gradient), #fff;
     border-radius: 2px;
   }
 
